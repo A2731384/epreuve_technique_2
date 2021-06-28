@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="ok-boomer, boomer, news, articles, EDEN-School">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OK, Boomer</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript>
+        <p>Please enable JavaScript !</p>
+    </noscript>
+    <!-- header -->
+    <header class="page-header">
+        <!-- header img -->
+        <div class="header-img"></div>
+        <div class="container">
+            <div id="logo-ctn">
+                <h1 class="logo">OK,<span>Boomer</span>!</h1>
+                <p>le guide ultime pour comprendre et utiliser (ou pas) ce mème correctement</p>
+            </div>
+        </div>
+    </header>
+    <!-- article list -->
+    <div class="container article-list">
+        <!-- article -->
+        <article>
+            <div class="article-img show" id="article-img-1">
+                <img src="img/thumb.png" alt="lorem ipsum">
+            </div>
+            <div id="div-ctn-1">
+                <div>
+                    <div>
+                        <h3><a href="#">La fracture générationnelle en deux mots ?</a></h3>
+                        <p class="show" id="article-text-1">On peut trouver cette expression géniale, ironique, bien envoyée ou, au contraire, offensante, inappropriée, injuste. Elle est la condensation parfaite d’une déchirure générationnelle plus lourde qu’on veut bien le croire. Analysé ici depuis l’angle des enjeux écologiques, ce “ok boomer” sonne le glas d’une vision du monde illusoire et aussi d’une certaine écologie à la papa.</p>
+                    </div>
+                    <aside>
+                        <button class="show-article" id="show-article-1"><i class="fas fa-chevron-circle-up"></i></button>
+                    </aside>
+                </div>
+                <div>
+                    <div>
+                        <p><i class="fas fa-calendar"></i> 20/05/2021</p>
+                    </div>
+                    <div>
+                        <p><i class="fas fa-comment-alt"></i> by apolinnaire.69</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Script to show the article -->
+            <script>
+                let art_img1 = document.querySelector('#article-img-1');
+                let art_text1 = document.querySelector('#article-text-1');
+                let btn_toggle1 = document.querySelector('#show-article-1');
+                let div1 = document.querySelector('#div-ctn-1');
+
+                btn_toggle1.addEventListener('click', function() {
+                    if (art_img1.classList.contains('hidden')) {
+                        art_img1.classList.remove('hidden');
+                        art_text1.classList.remove('hidden');
+                        setTimeout(function () {
+                        art_img1.classList.remove('visuallyhidden');
+                        art_text1.classList.remove('visuallyhidden');
+                        btn_toggle1.innerHTML = '<i class="fas fa-chevron-circle-up" data-id="1"></i>';
+                        if (window.innerWidth > 768) {
+                            div1.style.width = "70%";
+                        }
+                        }, 20);
+                    } else {
+                        art_img1.classList.add('visuallyhidden');
+                        art_text1.classList.add('visuallyhidden');   
+                        art_img1.addEventListener('transitionend', function(e) {
+                        art_img1.classList.add('hidden');
+                        art_text1.classList.add('hidden');
+                        btn_toggle1.innerHTML = '<i class="fas fa-chevron-circle-down" data-id="1"></i>';
+                        div1.style.width = "100%";
+                        }, {
+                        capture: false,
+                        once: true,
+                        passive: false
+                        });
+                    }
+                });
+            </script>
+        </article>
+
+        <article>
+            <div class="article-img show" id="article-img-2">
+                <img src="img/thumb.png" alt="lorem ipsum">
+            </div>
+            <div id="div-ctn-2">
+                <div>
+                    <div>
+                        <h3><a href="#">Tik-tok versus Facebook</a></h3>
+                        <p class="show" id="article-text-2">L’expression « ok boomer » vient du terme « baby boomer », qui désigne une personne née entre 1946 et le début des années 1960. Des internautes emploient ces mots quand leurs parents décident d’aller voir ce qu’il se passe sur TikTok, ou lorsqu’ils ont des pratiques jugées dépassées sur Facebook. C’est aussi une excellente réponse aux poncifs qui débutent par « oh tu sais, de mon temps… ».</p>
+                    </div>
+                    <aside>
+                        <button class="show-article" id="show-article-2"><i class="fas fa-chevron-circle-up"></i></button>
+                    </aside>
+                </div>
+                <div>
+                    <div>
+                        <p><i class="fas fa-calendar"></i> 20/05/2021</p>
+                    </div>
+                    <div>
+                        <p><i class="fas fa-comment-alt"></i> by apolinnaire.69</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Script to show the article -->
+            <script>
+                let art_img2 = document.querySelector('#article-img-2');
+                let art_text2 = document.querySelector('#article-text-2');
+                let btn_toggle2 = document.querySelector('#show-article-2');
+                let div2 = document.querySelector('#div-ctn-2');
+
+                btn_toggle2.addEventListener('click', function() {
+                    if (art_img2.classList.contains('hidden')) {
+                        art_img2.classList.remove('hidden');
+                        art_text2.classList.remove('hidden');
+                        setTimeout(function () {
+                        art_img2.classList.remove('visuallyhidden');
+                        art_text2.classList.remove('visuallyhidden');
+                        btn_toggle2.innerHTML = '<i class="fas fa-chevron-circle-up"></i>';
+                        if (window.innerWidth > 768) {
+                            div2.style.width = "70%";
+                        }
+                        }, 20);
+                    } else {
+                        art_img2.classList.add('visuallyhidden');
+                        art_text2.classList.add('visuallyhidden');   
+                        art_img2.addEventListener('transitionend', function(e) {
+                        art_img2.classList.add('hidden');
+                        art_text2.classList.add('hidden');
+                        btn_toggle2.innerHTML = '<i class="fas fa-chevron-circle-down"></i>';
+                        div2.style.width = "100%";
+                        }, {
+                        capture: false,
+                        once: true,
+                        passive: false
+                        });
+                    }
+                });
+            </script>
+        </article>
+    </div>
+    <!-- footer -->
+    <footer>
+        <h2>Site réalisé par EDEN School. L'école Digitale Et Numérique pour les moins de 18 ans.</h2>
+    </footer>
+
+    <!-- jQuery and JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

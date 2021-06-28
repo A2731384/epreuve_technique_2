@@ -1,0 +1,306 @@
+// @import and @font-face //
+
+@font-face {
+    font-family: "Roboto bold";
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Roboto regular";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+
+$roboto_bold : "Roboto bold";
+$roboto_regular : "Roboto regular";
+
+@font-face {
+    font-family: "Sinhala";
+    src: url("../fonts/SinhalaMN.ttf");
+}
+
+$sinhala : "Sinhala" , serif;
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+$openSans : "OpenSans";
+
+//
+
+* {box-sizing: border-box}
+
+//  *GLOBAL* //
+
+$text : #181B31;
+$secondary : #ff7474;
+$grey : #EAEBF5;
+$dark-grey : #808291;
+$border : #DBDCE6;
+
+html {font-size: 62.5%}
+
+body {
+    font-family: $roboto_regular;
+    font-size: 1.8rem;
+    line-height: 2;
+    margin: 0;
+    color: $text;
+}
+
+img {max-width: 100%}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.show {
+    transition: opacity 1s linear;
+}
+
+.visuallyhidden {
+    opacity: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show-article {
+    cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+}
+
+// *END GLOBAL* //
+// Responsive
+// Mobile : > 768px
+// Table & PC : < 768px & 1200px container
+// Mobile first
+
+.page-header {
+    background-color: $grey;
+    width: 100%;
+    > .header-img {
+        background-image: url("../img/Background\ Boomers.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 25.7rem;
+        width: 100%;
+    }
+
+    div:nth-child(2) {
+        padding: 3.6rem 0;
+
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            text-align: center;
+            font-family: $sinhala;
+            font-size: 6.1em;
+    
+            span {
+                display: inline-block;
+                color: $secondary;
+            }
+        }
+    
+        p {
+            font-size: 1.8rem;
+            margin: 0 auto;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $roboto_regular;
+            max-width: 35ch;
+            line-height: 1.4;
+        }
+    }
+}
+
+.article-list {
+    margin: 6.7rem 0 7.2rem;
+
+    article {
+        width: 100%;
+        border: 2px solid $border;
+        &:not(:first-child) {
+            margin-top: 5rem;
+        }
+
+        .article-img {
+            width: 100%;
+            height: 32.1rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        > div:nth-child(2) {
+            > div:nth-child(1) {
+                display: flex;
+                flex-direction: row;
+                padding: 2rem .5rem 0 2rem;
+    
+                > div:first-child {
+                    width: 93%;
+    
+                    h3 {
+                        text-align: left;
+                        font-size: 3rem;
+
+                        a {
+                            color: $text;
+                            text-decoration: none;
+
+                            &:visited {
+                                color: $text;
+                            }
+                        }
+                    }
+    
+                    p {
+                        text-align: left;
+                        font-size: 1.8rem;
+                        line-height: 1.4;
+                    }
+                }
+    
+                > aside {
+                    display: flex;
+                    justify-content: center;
+                    width: 7%;
+    
+                    button {
+                        background-color: transparent;
+                        color: $dark-grey;
+                        font-size: 3rem;
+                        padding: 0;
+                        height: 3rem;
+                        width: 3rem;
+                        border: none;
+                    }
+                }
+            }
+    
+            > div:nth-child(2) {
+                margin-top: 3rem;
+                background-color: $grey;
+                display: flex;
+                justify-content: space-evenly;
+    
+                p {
+                    font-size: 1.8rem;
+                    i {
+                        margin-right: .75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 3.2rem 0 2.9rem;
+    background-color: $secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        margin: 0 auto;
+        font-size: 1.6rem;
+        max-width: 40ch;
+        text-align: center;
+        color: #ffffff;
+        font-family: $openSans;
+    }
+}
+
+// responsive //
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .page-header {
+        .header-img {
+            height: 450px;
+        }
+
+        div:nth-child(2) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .article-list {
+        margin: 6.7rem auto 7.2rem;
+
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            .article-img {
+                width: 30%;
+                background-image: url("../img/thumb.png");
+                min-height: 100%;
+                background-position: center;
+
+                img {
+                    display: none;
+                }
+            }
+
+            > div:nth-child(2) {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                > div:nth-child(1) {
+                    padding: 3rem 2rem 0 8rem;
+                }
+                
+                > div:nth-child(2) {
+                    margin: 0;
+                    width: 100%;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 1.8rem 0 1.2rem;
+    
+                    > div {
+                        margin-right: 4.1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        h2 {
+            max-width: 100%;
+        }
+    }
+}
