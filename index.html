@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- noscript tag to tell the user if he didn't enable JavaScript or if it isn't supported -->
     <noscript>
-        <p>Please enable JavaScript !</p>
+        <p>Javascript might be disable or your browser doesn't support it.</p>
     </noscript>
     <!-- header -->
     <header class="page-header">
@@ -55,11 +56,14 @@
             </div>
             <!-- Script to show the article -->
             <script>
+                // Here I get all my variables
+                // You need to increment at the end of every class everytime you need to add an article. It might seem problematic at first but in php it's really simple
                 let art_img1 = document.querySelector('#article-img-1');
                 let art_text1 = document.querySelector('#article-text-1');
                 let btn_toggle1 = document.querySelector('#show-article-1');
                 let div1 = document.querySelector('#div-ctn-1');
 
+                // Function to add my classes and do my little animation
                 btn_toggle1.addEventListener('click', function() {
                     if (art_img1.classList.contains('hidden')) {
                         art_img1.classList.remove('hidden');
@@ -115,11 +119,14 @@
             </div>
             <!-- Script to show the article -->
             <script>
+                // Here I get all my variables
+                // Here I incremented from 1 to 2
                 let art_img2 = document.querySelector('#article-img-2');
                 let art_text2 = document.querySelector('#article-text-2');
                 let btn_toggle2 = document.querySelector('#show-article-2');
                 let div2 = document.querySelector('#div-ctn-2');
 
+                // Function to add my classes and do my little animation
                 btn_toggle2.addEventListener('click', function() {
                     if (art_img2.classList.contains('hidden')) {
                         art_img2.classList.remove('hidden');
@@ -155,12 +162,13 @@
         <h2>Site réalisé par EDEN School. L'école Digitale Et Numérique pour les moins de 18 ans.</h2>
     </footer>
 
-    <!-- jQuery and JS -->
+    <!-- jQuery -->
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
 
+    <!-- My JS -->
     <script src="js/app.js"></script>
 </body>
 </html>
